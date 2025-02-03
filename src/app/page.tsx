@@ -42,7 +42,7 @@ export default function Home() {
             <BreadcrumbItem>
               <BreadcrumbLink onClick={() => handleBreadcrumbClick(null)}>Home</BreadcrumbLink>
             </BreadcrumbItem>
-            {breadcrumbs.map((item, index) => (
+            {breadcrumbs.map((item) => (
               <BreadcrumbItem key={item.id}>
                 <BreadcrumbSeparator />
                 <BreadcrumbLink onClick={() => handleBreadcrumbClick(item.id)}>{item.name}</BreadcrumbLink>
@@ -80,7 +80,7 @@ export default function Home() {
                 )}
               </TableCell>
               <TableCell>{file.type}</TableCell>
-              <TableCell>{file.size || "-"}</TableCell>
+              <TableCell>{file.size ?? "-"}</TableCell>
               <TableCell className="text-right">{file.modified}</TableCell>
             </TableRow>
           ))}
