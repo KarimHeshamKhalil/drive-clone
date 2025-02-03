@@ -25,7 +25,7 @@ export function getFilesByParent(parentId: string | null): FileItem[] {
 
 export function getFilePath(fileId: string): FileItem[] {
   const path: FileItem[] = []
-  let currentFile = mockFiles.find((f) => f.id === fileId)
+  let currentFile: FileItem | null | undefined = mockFiles.find((f) => f.id === fileId) || null
 
   while (currentFile) {
     path.unshift(currentFile)
